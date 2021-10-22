@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="swatch__content">
+  <div class="color-picker">
+    <div class="color-picker__swatch-content">
       <div
         :key="`swatch-${index}`"
         v-for="(swatch, index) in swatches"
@@ -10,7 +10,7 @@
         @click="swatchActive = index"
       />
     </div>
-    <div class="btn__content">
+    <div class="color-picker__btn-content">
       <button
         :key="`btn-${index}`"
         v-for="(btn, index) in types"
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { rgb, hex, hsl } from '@/utils/colors'
+
 export default {
   data() {
     return {
@@ -45,7 +47,16 @@ export default {
   },
   computed:{
     activeColorCode() {
-      return `#${this.swatches[this.swatchActive]}`
+      const activeColor = this.swatches[this.swatchActive]
+      const activeType = this.types[this.buttonActive]
+      switch(activeType){
+        case 'rgb':
+          return rgb(activeColor)
+        case 'hex':
+          return hex(activeColor)
+        case 'hsl':
+          return hsl(activeColor)
+      }
     }
   }
 }
