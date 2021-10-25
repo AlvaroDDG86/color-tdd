@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <ColorPicker :swatches="['e3342f', '3490dc', 'f6993f', '38c172', 'fff']"/>
+    <h1>Color PICKER</h1>
+    <ColorPicker
+      :swatches="['e3342f', '3490dc', 'f6993f', '38c172', 'afa']"
+    />
   </div>
 </template>
 
@@ -16,11 +19,11 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
