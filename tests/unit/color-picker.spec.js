@@ -33,13 +33,13 @@ describe('ColorPicker.vue', () => {
   
     test('First element by default is active', () => {
       const swatch = wrapper.find('.color-picker__swatch')
-      expect(swatch.classes()).toContain('.color-picker__swatch')
+      expect(swatch.classes()).toContain('color-picker__swatch')
     })
   
     test('Switch active swatch onClick', async () => {
       const swatch = wrapper.findAll('.color-picker__swatch').at(2)
       await swatch.trigger('click')
-      expect(swatch.classes()).toContain('.color-picker__swatch')
+      expect(swatch.classes()).toContain('color-picker__swatch')
     })
   })
 
@@ -54,13 +54,13 @@ describe('ColorPicker.vue', () => {
   
     test('First button by default is active', () => {
       const button = wrapper.find('.color-picker__btn')
-      expect(button.classes()).toContain('.color-picker__btn--active')
+      expect(button.classes()).toContain('color-picker__btn--active')
     })
   
     test('Switch active button type onClick', async () => {
       const button = wrapper.findAll('.color-picker__btn').at(2)
       await button.trigger('click')
-      expect(button.classes()).toContain('.color-picker__btn--active')
+      expect(button.classes()).toContain('color-picker__btn--active')
     })
   })
   
